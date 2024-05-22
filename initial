@@ -1,0 +1,21 @@
+# Define a function to add a food item and its calories to the log
+def add_food(log):
+    food_item = input("Enter the food item: ")
+    calories = int(input(f"Enter the calories for {food_item}: "))
+    log[food_item] = calories
+    print(f"Added {food_item} with {calories} calories.\n")
+
+# Define a function to display the total calories for the day
+def view_total_calories(log):
+    total_calories = sum(log.values())
+    print(f"Total calories for today: {total_calories}\n")
+
+# Define a function to display all food items and their calories
+def view_food_log(log):
+    if log:
+        print("Today's food log:")
+        for food_item, calories in log.items():
+            print(f"{food_item}: {calories} calories")
+    else:
+        print("No food items logged yet.")
+    print()
